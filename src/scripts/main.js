@@ -2,7 +2,7 @@
 import { makePottery } from "./PotteryWheel.js"
 import { firePottery } from "./Kiln.js"
 import { toSellOrNotToSell } from "./PotteryCatalog.js"
-import { usePottery } from "./PotteryCatalog.js"
+import { PotteryList } from "./PotteryList.js"
 
 // Random number function for future use
 const randomNumberInRange = (min, max) => {
@@ -24,11 +24,11 @@ let catSculpture = makePottery("cat", randomNumberInRange(3, 8), 2)
     console.log(catSculpture) */
 
 // Fire each piece of pottery in the kiln
-let firedMug = firePottery(coffeeMug, randomNumberInRange(600, 2999))
-let firedPlatter = firePottery(bigPlatter, randomNumberInRange(600, 2999))
-let firedVase = firePottery(tallVase, randomNumberInRange(600, 2999))
-let firedBowl = firePottery(wideBowl, randomNumberInRange(600, 2999))
-let firedCat = firePottery(catSculpture, randomNumberInRange(600, 2999))
+let firedMug = firePottery(coffeeMug, randomNumberInRange(1400, 2999))
+let firedPlatter = firePottery(bigPlatter, randomNumberInRange(1400, 2999))
+let firedVase = firePottery(tallVase, randomNumberInRange(1400, 2999))
+let firedBowl = firePottery(wideBowl, randomNumberInRange(1400, 2999))
+let firedCat = firePottery(catSculpture, randomNumberInRange(1400, 2999))
 
     // Test to make sure these objects are logging correctly (check fired and cracked properties)
     /* console.log(firedMug)
@@ -55,6 +55,7 @@ let finishedCat = toSellOrNotToSell(firedCat)
     /* console.log(usePottery()) */
 
 // Invoke the component function that renders the HTML list
-
+const potteryHTMLElement = document.querySelector(".potteryList")
+potteryHTMLElement.innerHTML = PotteryList()
 
 

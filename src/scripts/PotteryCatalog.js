@@ -40,7 +40,7 @@ export const usePottery = () => {
 const potteryToSell = []
 
 export const toSellOrNotToSell = (potteryObject) => {
-    if (potteryObject.fired === true) {
+    if (potteryObject.fired === true) { //this line is to account for the event that a potteryObject is fired under 1400 degrees (see Kiln.js)
         if (potteryObject.cracked === false) {
             if (potteryObject.weight >= 6) {
                 potteryObject.price = 40
